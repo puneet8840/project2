@@ -43,13 +43,13 @@ return (
     </div>)}
    <div className="relative flex md:col-span-2 items-center justify-start flex-wrap ">
   {data.map((property, index) => (
-    <div key={index} className="   flex p-1 space-x-1 ">
+    <div key={index} className="   flex p-1 space-x-1 w-full ">
         <button onClick={handleDelete} className="absolute flex justify-center rounded-full  -left-3 top-2 p-1 bg-red-400 "><MdClose size={15}/></button>
-      <div className="border-2 p-2 text-white bg-gradient-to-r from-cyan-300 to-red-400">
+      <div className="border-2 p-2 flex-shrink-0 text-white bg-gradient-to-r from-cyan-300 to-red-400">
         {property[0]}
       </div>
       <FaArrowRight className="mt-2 text-red-200 flex-shrink-0"/>
-      <div className="border-2 p-2  text-left whitespace-normal break-words text-white bg-gradient-to-r from-cyan-300 to-red-400">{property[1]}</div>
+      <div className="border-2 p-2  text-left whitespace-normal break-words min-w-0 flex-1 text-white bg-gradient-to-r from-cyan-300 to-red-400">{property[1]}</div>
     </div>
   ))}
 </div>
