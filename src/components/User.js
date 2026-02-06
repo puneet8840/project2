@@ -49,7 +49,7 @@ return (
         {property[0]}
       </div>
       <FaArrowRight className="mt-2 text-red-200 flex-shrink-0"/>
-      <div className="border-2 p-2 text-white bg-gradient-to-r from-cyan-300 to-red-400">{property[1]}</div>
+      <div className="border-2 p-2 whitespace-normal text-white bg-gradient-to-r from-cyan-300 to-red-400">{property[1]}</div>
     </div>
   ))}
 </div>
