@@ -41,9 +41,9 @@ return (
 
         <div className="bg-blue-400 flex items-center justify-center space-x-10 text-white rounded-lg z-10 p-20"><span className="animate-bounce text-4xl text-red-500">deleted!</span> <div onClick={handleBack} className="px-8 py-4 cursor-pointer bg-blue-300" >Go Back{` `}<FaArrowLeft/></div></div>
     </div>)}
-   <div className="relative grid grid-cols-1 md:col-span-2 md:[grid-template-columns:repeat(auto-fit,minmax(220px,1fr))] gap-1">
+   <div className="relative flex md:col-span-2 items-center justify-start flex-wrap ">
   {data.map((property, index) => (
-    <div key={index} className="  flex p-1 space-x-1 ">
+    <div key={index} className="   flex p-1 space-x-1 ">
         <button onClick={handleDelete} className="absolute flex justify-center rounded-full  -left-3 top-2 p-1 bg-red-400 "><MdClose size={15}/></button>
       <div className="border-2 p-2 text-white bg-gradient-to-r from-cyan-300 to-red-400">
         {property[0]}

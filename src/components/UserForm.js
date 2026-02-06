@@ -5,7 +5,7 @@ import * as Yup from "yup";
 import useSubmit from "../hooks/useSubmit";
 import { getUser } from "../services/userApi";
 import User from "./User";
-import {Link,} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 
 const UserForm = () => {
@@ -17,6 +17,7 @@ const UserForm = () => {
     initialValues: { firstname: "", lastname: "", phonenumber: "", email: "" },
     onSubmit: async (values,{resetForm}) => {
     resetForm()
+    setSubmitted(false)
     const status=await submitForm(values)
     setSubmitted(status)
     },
@@ -46,9 +47,7 @@ catch(err){
   return (
     <>
     
-    {loading && (<p>submitting form</p>)}
-    {err && (<p>something went wrong</p>)}
-    {isSubmitted && (<p>congrats its done</p>)}
+  
     <p className="italic text-base text-red-900 text-center">After deleting records, please refersh the page to see updated data, for deleting a record kindly click left cross icon for each record</p>
       <p className="italic text-base  text-red-900 text-center">for creating user, please fill the form and submit, you can get submitted data by clicking on  <span className="inline-block animate-bounce text-slate-900">Get User</span> button</p>
       <p className="text-2xl font-bold text-red-900 mb-10 text-center animate-pulse">Kindly Note For Create, Update and Delete, operations are fake, we are using mock JSON server</p>
@@ -83,8 +82,11 @@ catch(err){
           submit!
         </button>
         <button type="button" onClick={fetchUser} className="px-8 py-4 bg-blue-300">
-          Get User
+          Get Users
         </button>
+          {loading && (<p className="mt-3 bg-gradient-to-r from-blue-600 to-green-400">submitting form</p>)}
+    {err && (<p className="mt-3 bg-gradient-to-r from-blue-600 to-green-400">something went wrong</p>)}
+    {isSubmitted && (<p className="mt-3 bg-gradient-to-r from-blue-600 to-green-400">congrats its done</p>)}
        </div>
         
       </form>
